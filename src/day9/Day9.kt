@@ -166,7 +166,7 @@ fun main() {
     Its always the head (H) that moves, the (T) follows T.
     */
 
-    val day = "day9"
+    val day = "day09"
     val filename = "Day09"
 
     // test if implementation meets criteria from the description, like:

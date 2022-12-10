@@ -86,7 +86,6 @@ fun main() {
         val collector: (Dir) -> Unit = { dir: Dir -> dirs.add(dir)}
         browse(rootDir, collector)
         return dirs.toList()
-
     }
 
     fun findSizeOfDirectoryToDelete(input: List<String>): Int? {

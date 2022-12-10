@@ -6,17 +6,6 @@ class Dir(val name: String) {
     val children: MutableList<Dir> = mutableListOf()
 
     fun getDirSize(): Int {
-        var size = files.sumOf { it.size }
-        val collector: (Dir) -> Unit = { dir: Dir -> size += dir.files.sumOf { it.size } }
-        browse(this.children, collector)
-        return size
-    }
-
-    private fun browse(children: List<Dir>, collector: (Dir) -> Unit) {
-        if (children.isEmpty()) return
-        children.forEach {
-            collector(it)
-            browse(it.children, collector)
-        }
+        return files.sumOf { it.size } + children.sumOf { it.getDirSize() }
     }
 }
